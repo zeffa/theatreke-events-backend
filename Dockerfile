@@ -19,20 +19,14 @@ COPY scripts /scripts
 
 RUN chmod +x /scripts/*
 
-COPY theatre-events $PROJECT_DIR
-
-RUN mkdir -p /vol/web/static
+COPY ./theatre-events $PROJECT_DIR
 
 COPY Pipfile Pipfile.lock $PROJECT_DIR
 
 RUN chown -R admin:admin $PROJECT_DIR
 
-RUN chown -R admin:admin /vol
-
-RUN chown -R 755 /vol/web
-
-RUN cd $PROJECT_DIR && pipenv install --system --dev
+RUN pipenv install --system --dev
 
 USER admin
 
-CMD ["scripts/run.sh"]
+CMD ["/scripts/run.sh"]
