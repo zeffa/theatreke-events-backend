@@ -1,0 +1,38 @@
+version: '3.9'
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: events-api
+    command: sh -c "python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - ./theatre-events:/events
+    ports:
+      - '8000:8000'
+    env_file:
+      - env/dev/.env
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15.2-alpine
+    container_name: events-db
+    volumes:
+      - theatrekedb:/events/theatrekedb
+    ports:
+      - "5432:5432"
+    env_file:
+      - env/dev/.env.db
+
+  pgadmin:
+    container_name: pgadmin4-container
+    image: dpage/pgadmin4
+    restart: always
+    env_file:
+      - env/dev/.env.pgadmin
+    ports:
+      - "5001:80"
+
+volumes:
+  theatrekedb:

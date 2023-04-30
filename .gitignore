@@ -9,5 +9,5 @@ request.json
 request_dump.json
 dump.rdb
 env/
-static
+theatre-events/static/
 *.__pycache__
