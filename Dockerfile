@@ -17,7 +17,7 @@ RUN pip install pipenv
 
 COPY scripts /scripts
 
-RUN chmod +x /scripts/*
+RUN chmod +x /scrirpts/*
 
 COPY ./theatre-events $PROJECT_DIR
 
@@ -25,8 +25,10 @@ COPY Pipfile Pipfile.lock $PROJECT_DIR
 
 RUN chown -R admin:admin $PROJECT_DIR
 
+RUN chmod -R 755 $PROJECT_DIR
+
 RUN pipenv install --system --dev
 
 USER admin
 
-CMD ["/scripts/run.sh"]
+#CMD ["/scripts/run.sh"]

@@ -11,3 +11,6 @@ dump.rdb
 env/
 theatre-events/static/
 *.__pycache__
+requirements.txt
+devenv
+venv

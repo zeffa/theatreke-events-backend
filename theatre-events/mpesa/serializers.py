@@ -21,7 +21,6 @@ class STKCallbackSerializer(serializers.Serializer):
     CheckoutRequestID = serializers.CharField(max_length=255)
     ResultCode = serializers.IntegerField(max_value=10)
     ResultDesc = serializers.CharField(max_length=255)
-    # CallbackMetadata = CallbackMetadataSerializer()
     CallbackMetadata = serializers.DictField(child=serializers.ListField(child=serializers.DictField()))
 
 

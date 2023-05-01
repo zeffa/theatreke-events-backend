@@ -4,7 +4,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: events-api
+    container_name: events-api-deploy
+    command: sh -c "/scripts/run.sh"
     volumes:
       - ./theatre-events:/events
       - static:/events/static
@@ -29,20 +30,12 @@ services:
     image: postgres:15.2-alpine
     container_name: events-db
     volumes:
-      - theatrekedb:/events/theatrekedb
+      - theatrekedb:/var/lib/postgresql/data/theatrekedb
+#      - theatrekedb:/events/theatrekedb
     ports:
       - "5432:5432"
     env_file:
       - env/dev/.env.db
-
-  pgadmin:
-    container_name: pgadmin4-container
-    image: dpage/pgadmin4
-    restart: always
-    env_file:
-      - env/dev/.env.pgadmin
-    ports:
-      - "5001:80"
 
 volumes:
   theatrekedb:
