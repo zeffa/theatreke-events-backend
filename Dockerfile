@@ -17,7 +17,7 @@ RUN pip install pipenv
 
 COPY scripts /scripts
 
-RUN chmod +x /scrirpts/*
+RUN chmod +x /scripts/*
 
 COPY ./theatre-events $PROJECT_DIR
 
