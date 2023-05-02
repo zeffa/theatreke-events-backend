@@ -31,7 +31,6 @@ services:
     container_name: events-db
     volumes:
       - theatrekedb:/var/lib/postgresql/data/theatrekedb
-#      - theatrekedb:/events/theatrekedb
     ports:
       - "5432:5432"
     env_file:

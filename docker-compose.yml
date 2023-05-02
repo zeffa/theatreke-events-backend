@@ -19,7 +19,7 @@ services:
     image: postgres:15.2-alpine
     container_name: events-db
     volumes:
-      - theatrekedb:/events/theatrekedb
+      - theatrekedb:/var/lib/postgresql/data/theatrekedb
     ports:
       - "5432:5432"
     env_file:
