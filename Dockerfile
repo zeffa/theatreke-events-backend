@@ -9,7 +9,7 @@ WORKDIR $PROJECT_DIR
 
 RUN addgroup -S admin && adduser -S admin -G admin
 
-RUN apk update && apk add postgresql-dev gcc python3-dev musl-dev
+RUN apk update && apk add postgresql-development gcc python3-development musl-development
 
 RUN pip install --upgrade pip
 
@@ -27,7 +27,7 @@ RUN chown -R admin:admin $PROJECT_DIR
 
 RUN chmod -R 755 $PROJECT_DIR
 
-RUN pipenv install --system --dev
+RUN pipenv install --system --development
 
 USER admin
 
