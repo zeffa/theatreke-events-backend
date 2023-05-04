@@ -1,6 +1,6 @@
 from rest_framework import routers
 
-from theatreevents.authentication.views import AuthViewSet, UsersViewSet
+from .views import AuthViewSet, UsersViewSet
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register('', AuthViewSet, basename='authentication')

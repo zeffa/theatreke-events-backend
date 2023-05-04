@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from theatreevents.eventsapi.models import Client, Event, Venue
+from .models import Client, Event, Venue
 
 
 class ClientAdmin(admin.ModelAdmin):

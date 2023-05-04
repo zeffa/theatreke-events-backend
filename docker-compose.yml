@@ -9,7 +9,7 @@ services:
     volumes:
       - ./theatreevents:/events
     ports:
-      - '8000:8000'
+      - '8002:8000'
     env_file:
       - environment/development/.env
     depends_on:

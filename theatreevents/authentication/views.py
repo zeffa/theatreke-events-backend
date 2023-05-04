@@ -5,9 +5,9 @@ from rest_framework.decorators import action
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 
-from theatreevents.authentication import serializers
-from theatreevents.authentication.auth import authenticate_and_get_user, create_user_account
-from theatreevents.eventsapi.models import Client
+from . import serializers
+from .auth import authenticate_and_get_user, create_user_account
+from eventsapi.models import Client
 
 User = get_user_model()
 

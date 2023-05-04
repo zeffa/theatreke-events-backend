@@ -8,7 +8,7 @@ from .model_managers import UserManager
 
 
 class User(AbstractBaseUser):
-    from theatreevents.eventsapi.models import Client
+    from eventsapi.models import Client
     user_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     first_name = models.CharField(max_length=255, null=True, blank=True)
     last_name = models.CharField(max_length=255, null=True, blank=True)

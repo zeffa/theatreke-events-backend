@@ -2,8 +2,8 @@ import string
 
 import requests
 
-from theatreevents.main.settings import MPESA_CONSUMER_KEY, MPESA_CONSUMER_SECRET, MPESA_BASE_URL, PASS_KEY, SHORT_CODE
-from theatreevents.mpesa.helpers import basic_authorization, auth_response, get_password, get_timestamp
+from main.settings import MPESA_CONSUMER_KEY, MPESA_CONSUMER_SECRET, MPESA_BASE_URL, PASS_KEY, SHORT_CODE
+from .helpers import basic_authorization, auth_response, get_password, get_timestamp
 
 
 class LipaNaMpesa:

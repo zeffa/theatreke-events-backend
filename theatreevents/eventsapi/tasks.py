@@ -1,7 +1,7 @@
 from celery import shared_task
 from django.core.mail import send_mail
 
-from theatreevents.main import settings
+from main import settings
 
 
 @shared_task()

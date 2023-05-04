@@ -1,8 +1,8 @@
 from phonenumber_field.serializerfields import PhoneNumberField
 from rest_framework import serializers
-from theatreevents.authentication.serializers import UserSerializer
+from authentication.serializers import UserSerializer
 from . import models
-from .models import Client
+# from .models import Client
 
 
 class ClientSerializer(serializers.HyperlinkedModelSerializer):
@@ -20,7 +20,7 @@ class VenueSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class ApprovalSerializer(serializers.Serializer):
-    status = serializers.ChoiceField(choices=Client.STATUSES)
+    status = serializers.ChoiceField(choices=models.Client.STATUSES)
     comment = serializers.CharField(required=True, max_length=255)
 
 
