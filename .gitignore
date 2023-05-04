@@ -8,9 +8,9 @@ events-env
 request.json
 request_dump.json
 dump.rdb
-env/
-theatre-events/static/
+env/dev
+env/prod
+theatreevents/static/
 *.__pycache__
-requirements.txt
 devenv
 venv

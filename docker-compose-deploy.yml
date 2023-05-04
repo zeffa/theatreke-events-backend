@@ -7,7 +7,7 @@ services:
     container_name: events-api-deploy
     command: sh -c "/scripts/run.sh"
     volumes:
-      - ./theatre-events:/events
+      - ./theatreevents:/events
       - static:/events/static
     ports:
       - '8000:8000'

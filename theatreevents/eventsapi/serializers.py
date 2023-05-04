@@ -1,6 +1,6 @@
 from phonenumber_field.serializerfields import PhoneNumberField
 from rest_framework import serializers
-from authentication.serializers import UserSerializer
+from theatreevents.authentication.serializers import UserSerializer
 from . import models
 from .models import Client
 

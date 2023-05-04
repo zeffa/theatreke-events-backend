@@ -4,11 +4,11 @@ from django.contrib.auth.base_user import AbstractBaseUser
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 
-from authentication.model_managers import UserManager
+from .model_managers import UserManager
 
 
 class User(AbstractBaseUser):
-    from eventsapi.models import Client
+    from theatreevents.eventsapi.models import Client
     user_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     first_name = models.CharField(max_length=255, null=True, blank=True)
     last_name = models.CharField(max_length=255, null=True, blank=True)
@@ -49,7 +49,7 @@ class User(AbstractBaseUser):
 
     @property
     def is_admin(self):
-        """Is the user a admin member?"""
+        """Is the user an admin member?"""
         return self.admin
 
     @property

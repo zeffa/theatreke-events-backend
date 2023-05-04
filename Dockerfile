@@ -19,7 +19,7 @@ COPY scripts /scripts
 
 RUN chmod +x /scripts/*
 
-COPY ./theatre-events $PROJECT_DIR
+COPY theatreevents $PROJECT_DIR
 
 COPY Pipfile Pipfile.lock $PROJECT_DIR
 
